@@ -1,0 +1,30 @@
+import {Router} from 'express';
+import passport from 'passport';
+
+/**
+ * Configuration for the user login route.
+ * @param router Express router to be configured
+ * @param path path at which the endpoint is to be set
+ */
+export const configureLoginRoute = (
+    router: Router,
+    path: string,
+) => {
+  router.post(path, (req, res, next) => {
+    passport.authenticate('local', (err, user, _) => {
+      if (err) {
+        return next(err);
+      }
+      if (!user) {
+        return res.status(401).json({login_status: 'FAILURE'});
+      }
+
+      req.login(user, (loginError) => {
+        if (loginError) {
+          return next(loginError);
+        }
+        return res.status(200).json({login_status: 'SUCCESS'});
+      });
+    })(req, res, next);
+  });
+};
