@@ -27,8 +27,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args:
-            -Dsonar.projectKey=jonathan-lee-devel_clipboard-api
-            -Dsonar.organization=jonathan-lee-devel
+            -Dsonar.projectKey=io-jonathanlee_clipboard-api
+            -Dsonar.organization=io-jonathanlee
             -Dsonar.sources=src
             -Dsonar.tests=src
             -Dsonar.inclusions=**
