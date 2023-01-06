@@ -10,6 +10,7 @@ const {connect} = mongoose;
 export const connectToDatabase = (
     logger: bunyan,
 ) => {
+  mongoose.set('strictQuery', true);
   connect(process.env.DATABASE_URL)
       .then((_) => {
         logger.info(
