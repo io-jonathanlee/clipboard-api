@@ -12,6 +12,7 @@ import {UsersRouter} from './routes';
 import {RegistrationRouter} from '../registration/routes';
 import {PasswordResetRouter} from '../password/routes';
 import {ProfileRouter} from '../profile/routes';
+import {OrganizationsRouter} from '../organizations/routes';
 
 const logger = loggerConfig();
 
@@ -35,6 +36,7 @@ app.use('/users', UsersRouter);
 app.use('/users/register', RegistrationRouter);
 app.use('/users/password', PasswordResetRouter);
 app.use('/users/profile', ProfileRouter);
+app.use('/organizations', OrganizationsRouter);
 
 app.use((_req, _res, next) => {
   next(createError(404));

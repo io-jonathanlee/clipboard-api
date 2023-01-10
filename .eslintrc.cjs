@@ -18,12 +18,18 @@ module.exports = {
         "max-len": [
             "error",
             {
-                "code": 100,
+                "code": 120,
                 "tabWidth": 2,
                 "ignoreComments": true,
                 "ignoreUrls": true,
                 "ignoreStrings": true,
                 "ignoreTemplateLiterals": true
+            }
+        ],
+        "new-cap": [
+            "error",
+            {
+                "properties": false
             }
         ]
     },

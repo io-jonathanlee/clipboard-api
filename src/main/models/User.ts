@@ -14,29 +14,29 @@ export interface User {
 }
 
 const schema = new Schema<User>({
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    firstName: {
-        type: String,
-        required: true,
-    },
-    lastName: {
-        type: String,
-        required: true,
-    },
-    password: {
-        type: String,
-        required: true,
-        unique: false,
-    },
-    emailVerified: {
-        type: Boolean,
-        required: true,
-        unique: false,
-    },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+    unique: false,
+  },
+  emailVerified: {
+    type: Boolean,
+    required: true,
+    unique: false,
+  },
 });
 
 export const UserModel = model<User>('User', schema);
